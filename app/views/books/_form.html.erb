@@ -1,0 +1,104 @@
+<%= simple_form_for(@book, :builder => Judge::FormBuilder) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <%= pluralize(@book.errors.count, "") %> El libro no fue guardado por el siguiente error:
+
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </tr><tr style="height: 35px;">
+  <% end %>
+<table style="width: 600px;" >
+<tbody>
+<tr style="height: 35px;">
+    <td style="text-align: right; width: 180px; vertical-align:bottom;"> 
+    <%= f.label :titulo, "Título", :validate => true  %> </td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :titulo, :size=>"40" %></td></tr>
+
+ <tr style="height: 35px;">   
+ <td style="text-align: right; width: 180px; vertical-align:bottom;">
+     <%= f.label :subtitulo %></td>
+    <td style= "text-align:left; padding-left: 10px;">
+        <%= f.text_field :subtitulo, :size=>"40" %></td>
+  </tr>
+ <tr style="height: 35px;">
+    <td style="text-align: right; width: 180px; vertical-align:bottom;">
+   <%= f.label :autor %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :autor, :size=>"40" %></td>
+  </tr><tr style="height: 35px;">
+    <td style="text-align: right; width: 180px; vertical-align:bottom;">
+   <%= f.label :colaborador %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :colaborador, :size=>"40" %></td>
+  </tr><tr style="height: 35px;">
+   <td style="text-align: right; width: 180px; vertical-align:bottom;">
+   <%= f.label :clasificacion, "Clasificación" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :clasificacion, :size=>"30" %></td>
+  </tr><tr style="height: 35px;">
+   <td style="text-align: right; width: 180px; vertical-align:bottom;">
+   <%= f.label :editorial %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :editorial, :size=>"30" %></td>
+  </tr><tr style="height: 35px;">
+    <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :edicion, "Edición" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :edicion, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+   <td style="text-align: right; width: 180px; vertical-align:bottom;">
+  <%= f.label :serie %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :serie, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+   <td style="text-align: right; width: 180px; vertical-align:bottom;">
+  <%= f.label :traduccion, "Traducción" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :traduccion, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+   <td style="text-align: right; width: 180px; vertical-align:bottom;">
+   <%= f.label :bibliografia, "Bibliografía" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :bibliografia, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+    <td style="text-align: right; width: 180px; vertical-align:bottom;">
+   <%= f.label :indice, "Índice" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :indice, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+   <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :apendice, "Apéndice" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :apendice, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+   <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :isbn %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :isbn, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+  <td style="text-align: right; width: 180px; vertical-align:middle;">
+    <%= f.label :contenido %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_area :contenido , :size=>"40x4"%></td>
+  </tr><tr style="height: 35px;">
+  <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :cantidad %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.number_field :cantidad, min: 1, max:99, step: 1, value:1  %></td>
+  </tr><tr style="height: 35px;">
+  <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :acervo %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :acervo , :size=>"30"%></td>
+  </tr><tr style="height: 35px;">
+  <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :ano_publicacion, "Año de Publicación" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.number_field :ano_publicacion, min: 1900, max: 2018, step: 1, value:2018  %> </td>
+  </tr><tr style="height: 35px;">
+  <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :anaquel %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :anaquel, :size=>"20" %></td>
+  </tr><tr style="height: 35px;">
+  <td style="text-align: right; width: 180px; vertical-align:bottom;">
+    <%= f.label :peldano, "Peldaño" %></td>
+     <td style= "text-align:left; padding-left: 10px;"><%= f.text_field :peldano, :size=>"20" %></td>
+  </tr>
+  <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr style="height: 35px;">
+     <td colspan="2" style= "text-align:center;">
+  <div class="actions">
+    <%= f.submit 'Guardar Libro' %></td>
+  </tr>
+</tbody>
+</table>
+
+<% end %>

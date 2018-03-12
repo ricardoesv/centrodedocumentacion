@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-MX">
+<head>
+
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+<meta name="csrf-param" content="authenticity_token" />
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,600,700" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round:400,400i" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet"/>
+	<link rel="stylesheet" href="/assets/stylesheets/css/dataTables.bootstrap4.min.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/stylesheets/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/stylesheets/style.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/stylesheets/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/stylesheets/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/stylesheets/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/stylesheets/css/magnific-popup.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/stylesheets/css/congreso_style.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/stylesheets/css/responsive.css" type="text/css" />
+	
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+	<style type="text/css">
+	.table-center {
+	text-align: center;
+}
+    </style>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title><%= yield(:title) %></title>
+	
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+<body class="stretched  no-transition">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header dark full-header" data-sticky-class="not-dark">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder">::before</i></div>
+
+					
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li><a href="welcome/index.html">
+							<div>Inicio</div></a>
+								</li>
+                                
+                          
+                                
+							<li><a href="#">
+							<div>Tecas</div></a>
+								<ul>
+									<li><a href="/books">
+									<div>Biblioteca</div></a>
+										</li>
+									<li><a href="#">
+									<div>Ludoteca</div></a>
+										</li>
+                                        <li><a href="/news">
+									<div>Hemeroteca</div></a>
+										</li>
+										<li><a href="/videos">
+									<div>Videoteca</div></a>
+									    </li>
+										<li><a href="#">
+									<div>Documentos Digitalizados</div></a>
+										</li>
+
+								</ul>
+							</li>
+                            
+                            
+						
+                        <li><a href="#">
+							<div>Acervos</div></a>
+								<ul>
+									<li><a href="/documents">
+									<div>Acervo Documental</div></a>
+										</li>
+									<li><a href="/historicals">
+									<div>Acervo Histórico</div></a>
+										</li>
+								</ul>		
+									
+
+								
+							</li>
+
+
+
+                            
+                            <li><a href="#">
+							<div>Usuarios</div></a>
+								<ul>
+									<li><a href="/users">
+									<div>Usuarios del Sistema</div></a>
+										</li>
+									
+								</ul>
+							</li>
+                        
+                        
+                        
+                        
+                         <li><a href="#">
+							<div>Buscar</div></a>
+								<ul>
+									<li><a href="busqueda.html">
+									<div>Busqueda de libros</div></a>
+										</li>
+								</ul>
+             					
+							</li>
+							
+							
+							
+							
+						<li>
+							<% if user_signed_in? %>
+							<%= link_to(destroy_user_session_path, method: :delete) do %>
+        <i class="fas fa-ban"></i>
+          <% end %>
+							
+						
+							
+						</li>
+						<%else%>
+						
+						
+							
+							<%= link_to(new_user_session_path) do %>
+          <i class="far fa-user"></i>
+          <% end %>
+							
+							
+							
+							
+						</li>
+						
+						<%end%>
+						
+                       
+                        </ul>
+                        
+                         
+
+						
+						
+
+						<!-- Top Search
+						============================================= 
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div>< #top-search end -->
+
+					</nav><!-- #primary-menu end -->
+
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+<!-- Page Title
+		============================================= -->
+		<section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('/assets/parallax.jpg'); padding: 120px 0;" data-stellar-background-ratio="0.3">
+
+			<div class="container clearfix">
+				<h1>&nbsp;</h1>
+			</div>
+
+		</section><!-- #page-title end -->
+        
+        
+        
+        	<section id="page-title">
+
+			<div class="container clearfix">
+			  <h1><%= yield(:title) %></h1>
+			  <span><%= yield(:subtitle) %></span></div>
+			  
+
+		</section><!-- #page-title end -->
+       
+
+					<!-- Post Content
+					============================================= -->
+					  
+                    
+<section id="content">
+
+		<div class="content-wrap">
+		
+
+		  <div class="container clearfix">
+
+				<span class="notice"><%=notice%></span>
+			<span class="alert"><%=alert%></span>		
+			
+                    <%= yield %>
+
+                    
+
+		  </div>
+		</div>
+
+		</section>
+
+				 <!-- .postcontent end --><!-- Footer
+		============================================= -->
+		</div>
+			</div>
+	</div>
+	<footer id="footer" class="dark">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+
+					    H. Congreso del Estado Libre y Soberano de Oaxaca <br>
+					    &copy; 2017 Todos los derechos reservados<br>
+
+						Calle 14 Oriente #1 San Raymundo Jalpan, Oaxaca, C.P. 71248 <br>
+
+						<i class="icon-headphones"></i> 01 (951) 5020200 y 5020400 <br>
+
+					
+						 
+
+						 
+						
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="http://www.facebook.com/Congreso63Oax/" class="social-icon si-small si-borderless si-facebook">
+								
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="http://twitter.com/Congreso63Oax" class="social-icon si-small si-borderless si-twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="https://www.youtube.com/channel/UCQqFv1hvsB9JNV4EZzMJvmA/videos" class="social-icon si-small si-borderless si-youtube">
+								<i class="icon-youtube"></i>
+								<i class="icon-youtube"></i>
+							</a>
+							<a href="http://instagram.com/Congreso63Oax" class="social-icon si-small si-borderless si-instagram">
+								<i class="icon-instagram"></i>
+								<i class="icon-instagram"></i>
+							</a>
+
+							
+						</div>
+
+						<div class="clear"></div>
+
+						<span class="middot">&middot;</span>  <i class="icon-envelope2"></i> transparenciacongreso@gmail.com
+						
+
+
+						
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/assets/jquery.js"></script>
+	<script type="text/javascript" src="/assets/plugins.js"></script>
+	<script type="text/javascript" src="/assets/table.js"></script>
+	<script type="text/javascript" src="/assets/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="/assets/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="/assets/dataTables.bootstrap4.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/assets/functions.js"></script>
+
+</body>
+</html>

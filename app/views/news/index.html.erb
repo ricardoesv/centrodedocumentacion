@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing News</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Subtitulo</th>
+      <th>Autor</th>
+      <th>Colaborador</th>
+      <th>Clasificacion</th>
+      <th>Editorial</th>
+      <th>Edicion</th>
+      <th>Edicion</th>
+      <th>Serie</th>
+      <th>Traduccion</th>
+      <th>Bibliografia</th>
+      <th>Indice</th>
+      <th>Apendice</th>
+      <th>Apendice</th>
+      <th>Isbn</th>
+      <th>Contenido</th>
+      <th>Cantidad</th>
+      <th>Acervo</th>
+      <th>Ano publicacion</th>
+      <th>Anaquel</th>
+      <th>Peldano</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @news.each do |news| %>
+      <tr>
+        <td><%= news.titulo %></td>
+        <td><%= news.subtitulo %></td>
+        <td><%= news.autor %></td>
+        <td><%= news.colaborador %></td>
+        <td><%= news.clasificacion %></td>
+        <td><%= news.editorial %></td>
+        <td><%= news.edicion %></td>
+        <td><%= news.edicion %></td>
+        <td><%= news.serie %></td>
+        <td><%= news.traduccion %></td>
+        <td><%= news.bibliografia %></td>
+        <td><%= news.indice %></td>
+        <td><%= news.apendice %></td>
+        <td><%= news.apendice %></td>
+        <td><%= news.isbn %></td>
+        <td><%= news.contenido %></td>
+        <td><%= news.cantidad %></td>
+        <td><%= news.acervo %></td>
+        <td><%= news.ano_publicacion %></td>
+        <td><%= news.anaquel %></td>
+        <td><%= news.peldano %></td>
+        <td><%= link_to 'Show', news %></td>
+        <td><%= link_to 'Edit', edit_news_path(news) %></td>
+        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New News', new_news_path %>

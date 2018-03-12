@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  subtitulo: MyString
+  autor: MyString
+  colaborador: MyString
+  clasificacion: MyString
+  editorial: MyString
+  edicion: MyString
+  edicion: MyString
+  serie: MyString
+  traduccion: MyString
+  bibliografia: MyString
+  indice: MyString
+  apendice: MyString
+  apendice: MyString
+  isbn: MyString
+  contenido: MyString
+  cantidad: 1
+  acervo: MyString
+  ano_publicacion: MyString
+  anaquel: MyString
+  peldano: MyString
+
+two:
+  titulo: MyString
+  subtitulo: MyString
+  autor: MyString
+  colaborador: MyString
+  clasificacion: MyString
+  editorial: MyString
+  edicion: MyString
+  edicion: MyString
+  serie: MyString
+  traduccion: MyString
+  bibliografia: MyString
+  indice: MyString
+  apendice: MyString
+  apendice: MyString
+  isbn: MyString
+  contenido: MyString
+  cantidad: 1
+  acervo: MyString
+  ano_publicacion: MyString
+  anaquel: MyString
+  peldano: MyString
